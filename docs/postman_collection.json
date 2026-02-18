@@ -1,0 +1,407 @@
+{
+  "info": {
+    "_postman_id": "blog-api-collection",
+    "name": "Blog Management REST API",
+    "description": "Comprehensive API collection for Blog Management REST API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Categories",
+      "item": [
+        {
+          "name": "Get All Categories",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/categories?page=0&size=10",
+              "host": ["{{base_url}}"],
+              "path": ["api", "categories"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Category by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/categories/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "categories", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Category",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"DevOps\",\n  \"description\": \"DevOps tools and practices\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/categories",
+              "host": ["{{base_url}}"],
+              "path": ["api", "categories"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Category",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Technology\",\n  \"description\": \"Updated tech description\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/categories/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "categories", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Category",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/categories/4",
+              "host": ["{{base_url}}"],
+              "path": ["api", "categories", "4"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search Categories",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/categories/search?searchTerm=technology&page=0&size=10",
+              "host": ["{{base_url}}"],
+              "path": ["api", "categories", "search"],
+              "query": [
+                {
+                  "key": "searchTerm",
+                  "value": "technology"
+                },
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Posts",
+      "item": [
+        {
+          "name": "Get All Posts",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/posts?page=0&size=10&sort=createdAt,desc",
+              "host": ["{{base_url}}"],
+              "path": ["api", "posts"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                },
+                {
+                  "key": "sort",
+                  "value": "createdAt,desc"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Post by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/posts/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "posts", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Post",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Advanced Spring Security\",\n  \"content\": \"Learn advanced security concepts in Spring including OAuth2, JWT, and method-level security. This comprehensive guide covers the latest best practices and common security patterns used in production applications.\",\n  \"author\": \"Security Expert\",\n  \"categoryId\": 1\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/posts",
+              "host": ["{{base_url}}"],
+              "path": ["api", "posts"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Post",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Getting Started with Spring Boot - Updated\",\n  \"content\": \"Updated content for Spring Boot guide\",\n  \"author\": \"John Doe\",\n  \"categoryId\": 1\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/posts/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "posts", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Post",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/posts/6",
+              "host": ["{{base_url}}"],
+              "path": ["api", "posts", "6"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Posts by Category",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/posts/category/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "posts", "category", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search Posts",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/posts/search?searchTerm=spring&page=0&size=10",
+              "host": ["{{base_url}}"],
+              "path": ["api", "posts", "search"],
+              "query": [
+                {
+                  "key": "searchTerm",
+                  "value": "spring"
+                },
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Comments",
+      "item": [
+        {
+          "name": "Get Comments for Post",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/posts/1/comments?page=0&size=10",
+              "host": ["{{base_url}}"],
+              "path": ["api", "posts", "1", "comments"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Approved Comments",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/posts/1/comments/approved",
+              "host": ["{{base_url}}"],
+              "path": ["api", "posts", "1", "comments", "approved"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add Comment to Post",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"content\": \"Excellent tutorial! Really helpful for understanding Spring Boot concepts.\",\n  \"author\": \"Reader Name\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/posts/1/comments",
+              "host": ["{{base_url}}"],
+              "path": ["api", "posts", "1", "comments"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Comment",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"content\": \"Updated comment content\",\n  \"author\": \"John Doe\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/posts/1/comments/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "posts", "1", "comments", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Approve Comment",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/posts/1/comments/3/approve",
+              "host": ["{{base_url}}"],
+              "path": ["api", "posts", "1", "comments", "3", "approve"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Reject Comment",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/posts/1/comments/1/reject",
+              "host": ["{{base_url}}"],
+              "path": ["api", "posts", "1", "comments", "1", "reject"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Comment",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/posts/1/comments/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "posts", "1", "comments", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8080"
+    }
+  ]
+}
